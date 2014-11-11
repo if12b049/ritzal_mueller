@@ -1,12 +1,21 @@
 package businessobjects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 /**
  * Created by Roman on 21.10.2014.
  */
+@Entity
+@Table(name="publisher")
+@XmlRootElement
 public class Publisher {
     /*inside database*/
+    @Id @GeneratedValue
     private int id;
     private String name;
     private String postcode;
@@ -15,8 +24,6 @@ public class Publisher {
     private String email;
     private String address;
     /*generated from other table*/
-    private List<Book> published_books;
-    private List<Author> employed_author;
 
     public Publisher(){super();}
 
@@ -88,14 +95,5 @@ public class Publisher {
     public void setAddress(String address) {
         this.address = address;
     }
-
-    public List<Book> getPublished_books() {
-        return published_books;
-    }
-
-    public void setPublished_books(List<Book> published_books) {
-        this.published_books = published_books;
-    }
-
 
 }
