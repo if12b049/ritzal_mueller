@@ -3,12 +3,10 @@ package businessobjects;
 import businessobjects.Author;
 import businessobjects.Publisher;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import java.util.List;
 
 /**
@@ -17,6 +15,16 @@ import java.util.List;
 @Entity
 @Table(name="book")
 @XmlRootElement(name = "book")
+
+@NamedQuery(name = "Books.selectAll",
+        query = "SELECT b FROM Book b")
+/*@NamedQueries({
+        @NamedQuery(name = "Books.selectAll",
+                query = "SELECT b FROM Book b"),
+        @NamedQuery(name = "Books.select",
+                query = "SELECT b FROM Book b WHERE Book.description= ?1"),
+})*/
+
 public class Book {
     /*
     * TODO: Der Titel des Buches fehlt komplett, in DB und in Klasse ausbessern*/
@@ -49,7 +57,7 @@ public class Book {
         this.language = languages;
         this.authors = authors;
     }*/
-
+    @XmlTransient
     public int getId() {
         return id;
     }
@@ -57,43 +65,43 @@ public class Book {
     public void setId(int id) {
         this.id = id;
     }
-
+    @XmlAttribute
     public String getLanguage() {
         return language;
     }
-    @XmlAttribute
+
     public void setLanguage(String language) {
         this.language = language;
     }
-
+    @XmlAttribute
     public int getPages() {
         return pages;
     }
-    @XmlAttribute
+
     public void setPages(int pages) {
         this.pages = pages;
     }
-
+    @XmlAttribute
     public String getDescription() {
         return description;
     }
-    @XmlAttribute
+
     public void setDescription(String description) {
         this.description = description;
     }
-
+    @XmlAttribute
     public String getISBN() {
         return ISBN;
     }
-    @XmlAttribute
+
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
-
+    @XmlAttribute
     public String getSubtitle() {
         return subtitle;
     }
-    @XmlAttribute
+
     public void setSubtitle(String subtitle) {
         this.subtitle = subtitle;
     }
