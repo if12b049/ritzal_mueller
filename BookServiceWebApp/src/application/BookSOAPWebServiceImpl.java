@@ -3,6 +3,7 @@ package application;
 import businessobjects.*;
 import services.BookService;
 
+import javax.inject.Inject;
 import javax.jws.WebService;
 import java.util.List;
 
@@ -10,9 +11,9 @@ import java.util.List;
  * Created by Roman on 21.10.2014.
  */
 
-@WebService(endpointInterface = "application.BookSOAPWebService",
-        serviceName="BookSOAPWebService")
+@WebService(endpointInterface = "application.BookSOAPWebService")
 public class BookSOAPWebServiceImpl implements BookSOAPWebService{
+    @Inject
     private BookService bookService;
 
     @Override

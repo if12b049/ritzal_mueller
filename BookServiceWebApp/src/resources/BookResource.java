@@ -3,6 +3,7 @@ package resources;
 import businessobjects.Book;
 import services.BookService;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.ws.rs.*;
@@ -19,8 +20,8 @@ public class BookResource {
     EntityManager em;
 
     private Book book;
-
-    BookService service = new BookService();
+    @Inject
+    BookService service;
 
     @GET
     @Produces(MediaType.APPLICATION_XML)
@@ -30,10 +31,8 @@ public class BookResource {
 
     @GET
     @Path("/{title}")
-    @Produces(MediaType.TEXT_XML)
+    @Produces(MediaType.APPLICATION_XML)
     public List<Book> getConcreteBooks(@PathParam("title") String title) {
         return service.getConcreteBooks(title);
     }
-
-
 }

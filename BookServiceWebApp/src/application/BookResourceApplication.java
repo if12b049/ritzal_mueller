@@ -6,6 +6,6 @@ import javax.ws.rs.core.Application;
 /**
  * Created by Roman on 16.11.2014.
  */
-@ApplicationPath("/")
+@ApplicationPath("/resource")
 public class BookResourceApplication extends Application {
 }
