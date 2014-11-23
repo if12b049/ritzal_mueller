@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
 /**
@@ -12,33 +12,24 @@ import java.util.List;
  */
 @Entity
 @Table(name="publisher")
-@XmlRootElement
+@XmlRootElement(name = "publisher")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Publisher {
     /*inside database*/
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
+    @XmlElement(name = "id")
     private int id;
+    @XmlAttribute(name = "name")
     private String name;
     private String postcode;
+    @XmlAttribute(name = "countrycode")
     private String countrycode;
     private String telephone;
     private String email;
     private String address;
-    /*generated from other table*/
 
     public Publisher(){super();}
-
-    /*public Publisher(int id, String name, String postcode,
-                     String countrycode, String telephone, String email,
-                     String address, List<Book> published_books) {
-        this.id = id;
-        this.name = name;
-        this.postcode = postcode;
-        this.countrycode = countrycode;
-        this.telephone = telephone;
-        this.email = email;
-        this.address = address;
-        this.published_books = published_books;
-    }*/
 
     public int getId() {
         return id;

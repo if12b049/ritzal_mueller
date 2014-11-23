@@ -5,6 +5,10 @@ import services.BookService;
 
 import javax.inject.Inject;
 import javax.jws.WebService;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import java.io.StringReader;
 import java.util.List;
 
 /**
@@ -17,7 +21,9 @@ public class BookSOAPWebServiceImpl implements BookSOAPWebService{
     private BookService bookService;
 
     @Override
-    public void importBook(Book book) {bookService.importBook(book);  }
+    public void importBook(Book book) {
+            bookService.importBook(book);
+    }
 
     @Override
     public List<Book> getAllBooks() {
