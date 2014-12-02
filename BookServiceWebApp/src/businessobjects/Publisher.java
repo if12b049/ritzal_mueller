@@ -1,9 +1,6 @@
 package businessobjects;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 import java.util.List;
 
@@ -12,22 +9,30 @@ import java.util.List;
  */
 @Entity
 @Table(name="publisher")
+
 @XmlRootElement(name = "publisher")
 @XmlAccessorType(XmlAccessType.FIELD)
+
 public class Publisher {
     /*inside database*/
     @Id
     @GeneratedValue
     @XmlElement(name = "id")
+    @Column(name = "id")
     private int id;
     @XmlAttribute(name = "name")
-    private String name;
-    private String postcode;
+    @Column(name = "name")
+    private String name = null;
+    @XmlAttribute(name = "postcode")
+    @Column(name = "postcode")
+    private String postcode = null;
     @XmlAttribute(name = "countrycode")
-    private String countrycode;
-    private String telephone;
-    private String email;
-    private String address;
+    @Column(name = "countrycode")
+    private String countrycode= null;
+
+    /*@XmlTransient
+    @OneToMany(mappedBy = "publisher") //, cascade = CascadeType.PERSIST
+    private List<Book> bookList;*/
 
     public Publisher(){super();}
 
@@ -61,30 +66,6 @@ public class Publisher {
 
     public void setCountrycode(String countrycode) {
         this.countrycode = countrycode;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
 }

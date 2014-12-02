@@ -50,8 +50,8 @@
     <orderEntry type="library" scope="PROVIDED" name="Jersey-2.2" level="project" />
     <orderEntry type="library" name="JPA 1.0-JPA 1.0" level="project" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
-    <orderEntry type="library" name="JPA 2.1-JPA 2.1" level="project" />
-    <orderEntry type="library" name="JBoss Weld-2.0.3" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="JPA 2.1-JPA 2.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="JBoss 8.1.0.Final - CDI: Contexts and Dependency Injection" level="application_server_libraries" />
   </component>
 </module>
 

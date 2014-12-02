@@ -5,6 +5,7 @@ import businessobjects.Publisher;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,56 +13,67 @@ import java.util.List;
  */
 @Entity
 @Table(name="book")
+
 @XmlRootElement(name = "book")
 @XmlAccessorType(XmlAccessType.FIELD)
-@NamedQuery(name = "Books.selectAll",
-        query = "SELECT b FROM Book b")
-/*@NamedQueries({
+
+@NamedQueries({
         @NamedQuery(name = "Books.selectAll",
                 query = "SELECT b FROM Book b"),
-        @NamedQuery(name = "Books.select",
-                query = "SELECT b FROM Book b WHERE Book.description= ?1"),
-})*/
+        @NamedQuery(name = "Books.selectByTitle",
+                query = "SELECT b FROM Book b WHERE b.title LIKE :title"),
+})
+
 public class Book {
-    /*
-    * TODO: Der Titel des Buches fehlt komplett, in DB und in Klasse ausbessern*/
 
     /*inside database*/
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @XmlElement(name = "id")
+    @Column(name = "id")
     private int id;
+
     @XmlAttribute(name = "ISBN")
+    @Column(name="ISBN")
     private String ISBN;
+
+    @XmlAttribute(name = "title")
+    @Column(name="title")
+    private String title;
+
     @XmlAttribute(name = "subtitle")
+    @Column(name="subtitle")
     private String subtitle;
+
     @XmlAttribute(name = "description")
+    @Column(name="description")
     private String description;
+
     @XmlAttribute(name = "pages")
+    @Column(name="pages")
     private int pages;
+
     @XmlAttribute(name = "language")
+    @Column(name = "language")
     private String language;
 
     /*generated from other table*/
-    @XmlElement(name = "publisher", type = Publisher.class)
-    private Publisher publisher;
-    //@XmlElementWrapper(name = "authors")
-    @XmlElement(name = "author", type = Author.class)
-    private Author author;
+    /*@XmlElement(name = "publisher")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "publisherid")
+    private Publisher publisher;*/
 
-    /*@XmlElement
-    private int publisherid;
-    @XmlElement
-    private int authorid;*/
+    /*@XmlElementWrapper(name = "authors")
+    @XmlElement(name = "author")
+    @ManyToMany
+    @JoinTable(
+            name="authorsbooks",
+            joinColumns = {@JoinColumn(name = "bookid", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "authorid", referencedColumnName = "id")}
+    )
+    private List<Author> authorList;*/
 
-
-
-    /*public Book(Publisher publisher, Author author){
-        this.publisher = publisher;
-        this.author = author;
-    }*/
-
-    public Book() {  }
+    public Book(){}
 
     public int getId() {
         return id;
@@ -69,6 +81,14 @@ public class Book {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getLanguage() {

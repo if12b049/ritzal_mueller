@@ -33,6 +33,6 @@ public class BookResource {
     @Path("/{title}")
     @Produces(MediaType.APPLICATION_XML)
     public List<Book> getConcreteBooks(@PathParam("title") String title) {
-        return service.getConcreteBooks(title);
+        return service.getBookByTitle(title);
     }
 }

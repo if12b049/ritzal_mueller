@@ -31,8 +31,8 @@ public class BookSOAPWebServiceImpl implements BookSOAPWebService{
     }
 
     @Override
-    public List<Book> getConcreteBooks(String title) {
-        return bookService.getConcreteBooks(title);
+    public List<Book> getBookByTitle(String title) {
+        return bookService.getBookByTitle(title);
     }
 
     @Override

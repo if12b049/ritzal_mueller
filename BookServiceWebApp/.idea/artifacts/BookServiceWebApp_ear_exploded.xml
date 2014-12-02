@@ -12,8 +12,9 @@
       <element id="directory" name="lib">
         <element id="library" level="project" name="ejb-3.2" />
         <element id="library" level="project" name="Java EE 6-Java EE 6" />
-        <element id="library" level="project" name="JPA 2.1-JPA 2.1" />
+        <element id="library" level="project" name="JPA 1.0-JPA 1.0" />
       </element>
+      <element id="jpa-descriptors" facet="BookServiceWebApp/jpa/JPA" />
     </root>
   </artifact>
 </component>

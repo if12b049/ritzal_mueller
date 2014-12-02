@@ -20,7 +20,7 @@ public interface BookSOAPWebService {
     @WebMethod
     public List<Book> getAllBooks();
     @WebMethod
-    public List<Book> getConcreteBooks(String title);
+    public List<Book> getBookByTitle(String title);
     /*Author*/
     @WebMethod
     public List<Author> getAllAuthors();

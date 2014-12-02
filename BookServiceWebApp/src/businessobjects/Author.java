@@ -1,9 +1,6 @@
 package businessobjects;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 import java.sql.Date;
 import java.util.List;
@@ -12,12 +9,15 @@ import java.util.List;
  * Created by Roman on 21.10.2014.
  */
 @Entity
+//@Embeddable
 @Table(name="author")
 @XmlRootElement(name = "author")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Author {
     /*inside database*/
-    @Id @GeneratedValue
+    @Id
+    //@EmbeddedId
+    @GeneratedValue
     @XmlElement(name = "id")
     private int id;
     @XmlAttribute(name = "firstname")
@@ -26,8 +26,14 @@ public class Author {
     private String lastname;
     @XmlAttribute(name = "birthdate")
     private String birthdate;
-    private String email;
-    private String telephone;
+    @XmlTransient
+    private String email = null;
+    @XmlTransient
+    private String telephone = null;
+
+    /*@XmlTransient
+    @ManyToMany(mappedBy="authorList", cascade = CascadeType.PERSIST)
+    private List<Book> bookList;*/
 
     public Author(){super();}
 
