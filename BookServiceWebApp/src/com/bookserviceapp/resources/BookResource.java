@@ -30,9 +30,16 @@ public class BookResource {
     }
 
     @GET
-    @Path("/{title}")
+    @Path("/title/{title}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Book> getConcreteBooks(@PathParam("title") String title) {
+    public List<Book> getBookByTitle(@PathParam("title") String title) {
         return service.getBookByTitle(title);
+    }
+
+    @GET
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Book> getBookById(@PathParam("id") int id) {
+        return service.getBookById(id);
     }
 }

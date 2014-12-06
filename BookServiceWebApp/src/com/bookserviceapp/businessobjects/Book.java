@@ -15,8 +15,10 @@ import javax.xml.bind.annotation.*;
 @NamedQueries({
         @NamedQuery(name = "Books.selectAll",
                 query = "SELECT b FROM Book b"),
+        @NamedQuery(name = "Books.selectById",
+                query = "SELECT b FROM Book b WHERE b.id = :id"),
         @NamedQuery(name = "Books.selectByTitle",
-                query = "SELECT b FROM Book b WHERE b.title LIKE :title"),
+                query = "SELECT b FROM Book b WHERE b.title LIKE :title")
 })
 
 public class Book {

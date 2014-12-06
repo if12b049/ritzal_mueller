@@ -51,8 +51,7 @@
     <orderEntry type="library" name="JPA 1.0-JPA 1.0" level="project" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="JPA 2.1-JPA 2.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="JBoss 8.1.0.Final - CDI: Contexts and Dependency Injection" level="application_server_libraries" />
-    <orderEntry type="library" scope="PROVIDED" name="JBoss 8.1.0.Final - CDI: Contexts and Dependency Injection" level="application_server_libraries" />
+    <orderEntry type="library" name="JBoss 8.1.0.Final - CDI: Contexts and Dependency Injection" level="application_server_libraries" />
     <orderEntry type="library" scope="PROVIDED" name="JBoss 8.1.0.Final - Bean Validation" level="application_server_libraries" />
     <orderEntry type="library" scope="PROVIDED" name="JBoss 8.1.0.Final - JSON Processing (JSR 353)" level="application_server_libraries" />
   </component>

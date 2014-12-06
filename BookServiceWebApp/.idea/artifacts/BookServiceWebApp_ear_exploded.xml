@@ -13,6 +13,7 @@
         <element id="library" level="project" name="ejb-3.2" />
         <element id="library" level="project" name="Java EE 6-Java EE 6" />
         <element id="library" level="project" name="JPA 1.0-JPA 1.0" />
+        <element id="library" level="application_server_libraries" name="JBoss 8.1.0.Final - CDI: Contexts and Dependency Injection" />
       </element>
       <element id="jpa-descriptors" facet="BookServiceWebApp/jpa/JPA" />
     </root>
