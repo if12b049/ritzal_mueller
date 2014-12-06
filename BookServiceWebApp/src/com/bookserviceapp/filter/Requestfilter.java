@@ -1,7 +1,6 @@
-package filter;
+package com.bookserviceapp.filter;
 
 import javax.ws.rs.container.ContainerRequestContext;
-import javax.ws.rs.container.ContainerRequestFilter;
 import java.io.IOException;
 
 /**

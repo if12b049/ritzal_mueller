@@ -1,12 +1,11 @@
-package application;
+package com.bookserviceapp.application;
 
-import businessobjects.Author;
-import businessobjects.Book;
-import businessobjects.Publisher;
+import com.bookserviceapp.businessobjects.Author;
+import com.bookserviceapp.businessobjects.Book;
+import com.bookserviceapp.businessobjects.Publisher;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
-import java.io.File;
 import java.util.List;
 
 /**

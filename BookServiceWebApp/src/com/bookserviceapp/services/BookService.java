@@ -1,12 +1,10 @@
-package services;
+package com.bookserviceapp.services;
 
-import businessobjects.Book;
+import com.bookserviceapp.businessobjects.Book;
 
 import javax.ejb.LocalBean;
-import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

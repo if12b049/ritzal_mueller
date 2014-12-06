@@ -1,9 +1,7 @@
-package businessobjects;
+package com.bookserviceapp.businessobjects;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
-import java.sql.Date;
-import java.util.List;
 
 /**
  * Created by Roman on 21.10.2014.

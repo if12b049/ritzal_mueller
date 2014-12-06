@@ -1,21 +1,17 @@
-package application;
+package com.bookserviceapp.application;
 
-import businessobjects.*;
-import services.BookService;
+import com.bookserviceapp.businessobjects.*;
+import com.bookserviceapp.services.BookService;
 
 import javax.inject.Inject;
 import javax.jws.WebService;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
-import java.io.StringReader;
 import java.util.List;
 
 /**
  * Created by Roman on 21.10.2014.
  */
 
-@WebService(endpointInterface = "application.BookSOAPWebService")
+@WebService(endpointInterface = "com.bookserviceapp.application.BookSOAPWebService")
 public class BookSOAPWebServiceImpl implements BookSOAPWebService{
     @Inject
     private BookService bookService;

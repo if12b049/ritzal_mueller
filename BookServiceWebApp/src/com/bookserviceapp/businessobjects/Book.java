@@ -1,12 +1,7 @@
-package businessobjects;
-
-import businessobjects.Author;
-import businessobjects.Publisher;
+package com.bookserviceapp.businessobjects;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Roman on 21.10.2014.

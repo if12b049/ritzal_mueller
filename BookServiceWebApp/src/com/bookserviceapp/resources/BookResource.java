@@ -1,7 +1,7 @@
-package resources;
+package com.bookserviceapp.resources;
 
-import businessobjects.Book;
-import services.BookService;
+import com.bookserviceapp.businessobjects.Book;
+import com.bookserviceapp.services.BookService;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -24,14 +24,14 @@ public class BookResource {
     BookService service;
 
     @GET
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     public List<Book> getAllBooks() {
         return service.getAllBooks();
     }
 
     @GET
     @Path("/{title}")
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     public List<Book> getConcreteBooks(@PathParam("title") String title) {
         return service.getBookByTitle(title);
     }
