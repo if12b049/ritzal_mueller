@@ -12,6 +12,15 @@ import javax.xml.bind.annotation.*;
 @XmlRootElement(name = "publisher")
 @XmlAccessorType(XmlAccessType.FIELD)
 
+@NamedQueries({
+        @NamedQuery(name = "Publisher.selectAll",
+                query = "SELECT p FROM Publisher p"),
+        @NamedQuery(name = "Publisher.selectById",
+                query = "SELECT p FROM Publisher p WHERE p.id = :id"),
+        @NamedQuery(name = "Publisher.selectByName",
+                query = "SELECT p FROM Publisher p WHERE p.name LIKE :name")
+})
+
 public class Publisher {
     /*inside database*/
     @Id

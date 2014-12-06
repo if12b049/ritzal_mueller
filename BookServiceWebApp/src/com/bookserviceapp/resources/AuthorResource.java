@@ -1,13 +1,50 @@
 package com.bookserviceapp.resources;
 
-import javax.ws.rs.DELETE;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
+import com.bookserviceapp.businessobjects.Author;
+import com.bookserviceapp.businessobjects.Book;
+import com.bookserviceapp.services.AuthorService;
+import com.bookserviceapp.services.BookService;
+
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 /**
  * Created by phips on 05.12.2014.
  */
+
+@Path("/author")
 public class AuthorResource {
+
+    @PersistenceContext
+    EntityManager em;
+
+    private Author author;
+    @Inject
+    AuthorService service;
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Author> getAllAuthors() {
+        return service.getAllAuthors();
+    }
+
+    @GET
+    @Path("/name/{name}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Author> getAuthorByName(@PathParam("name") String name) {
+        return service.getAuthorByName(name);
+    }
+
+    @GET
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Author> getAuthorById(@PathParam("id") int id) {
+        return service.getAuthorById(id);
+    }
 
 
     //@PUT

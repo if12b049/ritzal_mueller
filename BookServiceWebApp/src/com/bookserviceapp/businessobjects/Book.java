@@ -13,11 +13,11 @@ import javax.xml.bind.annotation.*;
 @XmlAccessorType(XmlAccessType.FIELD)
 
 @NamedQueries({
-        @NamedQuery(name = "Books.selectAll",
+        @NamedQuery(name = "Book.selectAll",
                 query = "SELECT b FROM Book b"),
-        @NamedQuery(name = "Books.selectById",
+        @NamedQuery(name = "Book.selectById",
                 query = "SELECT b FROM Book b WHERE b.id = :id"),
-        @NamedQuery(name = "Books.selectByTitle",
+        @NamedQuery(name = "Book.selectByTitle",
                 query = "SELECT b FROM Book b WHERE b.title LIKE :title")
 })
 

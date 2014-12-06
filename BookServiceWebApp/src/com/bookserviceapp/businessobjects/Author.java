@@ -11,6 +11,15 @@ import javax.xml.bind.annotation.*;
 @Table(name="author")
 @XmlRootElement(name = "author")
 @XmlAccessorType(XmlAccessType.FIELD)
+
+@NamedQueries({
+        @NamedQuery(name = "Author.selectAll",
+                query = "SELECT a FROM Author a"),
+        @NamedQuery(name = "Author.selectById",
+                query = "SELECT a FROM Author a WHERE a.id = :id"),
+        @NamedQuery(name = "Author.selectByName",
+                query = "SELECT a FROM Author a WHERE a.firstname LIKE :name or a.lastname LIKE :name")
+})
 public class Author {
     /*inside database*/
     @Id

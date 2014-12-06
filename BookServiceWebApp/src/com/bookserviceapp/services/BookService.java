@@ -25,15 +25,16 @@ public class BookService {
     }
 
     public List<Book> getAllBooks(){
-        return em.createNamedQuery("Books.selectAll").getResultList();
+        return em.createNamedQuery("Book.selectAll").getResultList();
     }
 
     public List<Book> getBookByTitle(String title){
-        return em.createNamedQuery("Books.selectByTitle").setParameter("title", title).getResultList();
+        return em.createNamedQuery("Book.selectByTitle").setParameter("title", title).getResultList();
     }
 
     public List<Book> getBookById(int id){
-        return em.createNamedQuery("Books.selectById").setParameter("id", id).getResultList();
+        return em.createNamedQuery("Book.selectById").setParameter("id", id).getResultList();
     }
+
 
 }
