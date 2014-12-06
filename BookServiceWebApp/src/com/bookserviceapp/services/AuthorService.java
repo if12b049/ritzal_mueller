@@ -20,8 +20,6 @@ public class AuthorService {
     @PersistenceContext
     private EntityManager em;
 
-
-
     public void importAuthor(Author a) {
         em.persist(a);
     }

@@ -18,8 +18,6 @@ public class BookService {
     @PersistenceContext
     private EntityManager em;
 
-
-
     public void importBook(Book b) {
         em.persist(b);
     }
