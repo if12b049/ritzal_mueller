@@ -33,6 +33,4 @@ public class BookService {
     public List<Book> getBookById(int id){
         return em.createNamedQuery("Book.selectById").setParameter("id", id).getResultList();
     }
-
-
 }

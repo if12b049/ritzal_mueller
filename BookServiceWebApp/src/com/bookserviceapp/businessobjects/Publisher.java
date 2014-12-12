@@ -2,6 +2,7 @@ package com.bookserviceapp.businessobjects;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
+import java.util.List;
 
 /**
  * Created by Roman on 21.10.2014.
@@ -24,7 +25,7 @@ import javax.xml.bind.annotation.*;
 public class Publisher {
     /*inside database*/
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @XmlElement(name = "id")
     @Column(name = "id")
     private int id;
@@ -38,9 +39,9 @@ public class Publisher {
     @Column(name = "countrycode")
     private String countrycode= null;
 
-    /*@XmlTransient
-    @OneToMany(mappedBy = "publisher") //, cascade = CascadeType.PERSIST
-    private List<Book> bookList;*/
+    @XmlTransient
+    @OneToMany(mappedBy = "publisher", cascade = CascadeType.ALL) //, cascade = CascadeType.PERSIST
+    private List<Book> bookList;
 
     public Publisher(){super();}
 

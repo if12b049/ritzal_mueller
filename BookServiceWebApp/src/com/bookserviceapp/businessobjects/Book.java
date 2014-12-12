@@ -22,22 +22,20 @@ import javax.xml.bind.annotation.*;
 })
 
 public class Book {
-
     /*inside database*/
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @XmlElement(name = "id")
     @Column(name = "id")
-    private int id;
+    private long id;
 
     @XmlAttribute(name = "ISBN")
     @Column(name="ISBN")
     private String ISBN;
 
-    /*
     @XmlAttribute(name = "title")
     @Column(name="title")
-    private String title;*/
+    private String title;
 
     @XmlAttribute(name = "subtitle")
     @Column(name="subtitle")
@@ -50,18 +48,19 @@ public class Book {
     @XmlAttribute(name = "pages")
     @Column(name="pages")
     private int pages;
-/*
+
     @XmlAttribute(name = "language")
     @Column(name = "language")
     private String language;
-*/
-    /*generated from other table*/
-    /*@XmlElement(name = "publisher")
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "publisherid")
-    private Publisher publisher;*/
 
-    /*@XmlElementWrapper(name = "authors")
+    /*generated from other table*/
+    @XmlElement(name = "publisher")
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "publisherid", referencedColumnName = "id", nullable = false)
+    private Publisher publisher;
+
+
+/*@XmlElementWrapper(name = "authors")
     @XmlElement(name = "author")
     @ManyToMany
     @JoinTable(
@@ -73,22 +72,22 @@ public class Book {
 
     public Book(){ super();}
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
-    /*
+
     public String getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
         this.title = title;
-    }*/
-/*
+    }
+
     public String getLanguage() {
         return language;
     }
@@ -96,7 +95,7 @@ public class Book {
     public void setLanguage(String language) {
         this.language = language;
     }
-*/
+
     public int getPages() {
         return pages;
     }
@@ -127,5 +126,13 @@ public class Book {
 
     public void setSubtitle(String subtitle) {
         this.subtitle = subtitle;
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
     }
 }

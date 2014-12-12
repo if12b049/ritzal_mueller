@@ -2,6 +2,7 @@ package com.bookserviceapp.businessobjects;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
+import java.util.List;
 
 /**
  * Created by Roman on 21.10.2014.
@@ -23,8 +24,7 @@ import javax.xml.bind.annotation.*;
 public class Author {
     /*inside database*/
     @Id
-    //@EmbeddedId
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @XmlElement(name = "id")
     private int id;
     @XmlAttribute(name = "firstname")
@@ -38,8 +38,8 @@ public class Author {
     @XmlTransient
     private String telephone = null;
 
-    /*@XmlTransient
-    @ManyToMany(mappedBy="authorList", cascade = CascadeType.PERSIST)
+   /* @XmlTransient
+    @ManyToMany(mappedBy="authorList", cascade = CascadeType.ALL)
     private List<Book> bookList;*/
 
     public Author(){super();}
