@@ -26,6 +26,15 @@ public class AuthorResource {
     @Inject
     AuthorService service;
 
+
+    /*** Create ***/
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void createAuthor(String input){
+        //To implement
+    }
+
+    /*** Read ***/
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Author> getAllAuthors() {
@@ -46,8 +55,10 @@ public class AuthorResource {
         return service.getAuthorById(id);
     }
 
+    /*** Update ***/
 
     //@PUT
+
+    /*** Delete ***/
     //@DELETE
-    //@POST
 }
