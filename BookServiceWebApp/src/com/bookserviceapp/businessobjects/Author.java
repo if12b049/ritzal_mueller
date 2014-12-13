@@ -2,13 +2,14 @@ package com.bookserviceapp.businessobjects;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
+import java.util.List;
 
 /**
  * Created by Roman on 21.10.2014.
  */
 @Entity
-//@Embeddable
 @Table(name="author")
+
 @XmlRootElement(name = "author")
 @XmlAccessorType(XmlAccessType.FIELD)
 
@@ -23,24 +24,27 @@ import javax.xml.bind.annotation.*;
 public class Author {
     /*inside database*/
     @Id
-    //@EmbeddedId
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @XmlElement(name = "id")
+    @Column(name = "id")
     private int id;
     @XmlAttribute(name = "firstname")
-    private String firstname;
+    @Column(name = "firstname")
+    private String firstname = null;
     @XmlAttribute(name = "lastname")
-    private String lastname;
+    @Column(name = "lastname")
+    private String lastname = null;
     @XmlAttribute(name = "birthdate")
-    private String birthdate;
-    @XmlTransient
+    @Column(name = "birthdate")
+    private String birthdate = null;
+    /*@XmlTransient
     private String email = null;
     @XmlTransient
-    private String telephone = null;
+    private String telephone = null;*/
 
-    /*@XmlTransient
-    @ManyToMany(mappedBy="authorList", cascade = CascadeType.PERSIST)
-    private List<Book> bookList;*/
+    @XmlTransient
+    @ManyToMany(mappedBy="authorList", cascade = CascadeType.ALL)
+    private List<Book> authorList;
 
     public Author(){super();}
 
@@ -76,7 +80,7 @@ public class Author {
         this.birthdate = birthdate;
     }
 
-    public String getEmail() {
+   /* public String getEmail() {
         return email;
     }
 
@@ -90,5 +94,5 @@ public class Author {
 
     public void setTelephone(String telephone) {
         this.telephone = telephone;
-    }
+    }*/
 }
