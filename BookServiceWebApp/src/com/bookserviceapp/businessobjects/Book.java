@@ -2,6 +2,7 @@ package com.bookserviceapp.businessobjects;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
+import java.util.List;
 
 /**
  * Created by Roman on 21.10.2014.
@@ -60,15 +61,15 @@ public class Book {
     private Publisher publisher;
 
 
-/*@XmlElementWrapper(name = "authors")
+    @XmlElementWrapper(name = "authors")
     @XmlElement(name = "author")
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name="authorsbooks",
             joinColumns = {@JoinColumn(name = "bookid", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "authorid", referencedColumnName = "id")}
     )
-    private List<Author> authorList;*/
+    private List<Author> authorList;
 
     public Book(){ super();}
 
