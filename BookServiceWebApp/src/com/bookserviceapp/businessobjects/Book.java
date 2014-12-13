@@ -60,7 +60,6 @@ public class Book {
     @JoinColumn(name = "publisherid", referencedColumnName = "id", nullable = false)
     private Publisher publisher;
 
-
     @XmlElementWrapper(name = "authors")
     @XmlElement(name = "author")
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
