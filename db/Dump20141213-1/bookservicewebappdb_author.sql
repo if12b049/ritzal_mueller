@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `bookservicewebappdb` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `bookservicewebappdb`;
--- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.6.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: bookservicewebappdb
 -- ------------------------------------------------------
@@ -28,14 +28,10 @@ CREATE TABLE `author` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(45) NOT NULL,
   `lastname` varchar(45) NOT NULL,
-  `birthdate` date NOT NULL,
-  `email` varchar(45) DEFAULT NULL,
-  `publisher` int(11) DEFAULT NULL,
+  `birthdate` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `publisher_idx` (`id`,`publisher`),
-  KEY `publisherid_idx` (`publisher`),
-  CONSTRAINT `publisherid` FOREIGN KEY (`publisher`) REFERENCES `publisher` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  KEY `publisher_idx` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +40,7 @@ CREATE TABLE `author` (
 
 LOCK TABLES `author` WRITE;
 /*!40000 ALTER TABLE `author` DISABLE KEYS */;
-INSERT INTO `author` VALUES (1,'Philipp','Mueller','1991-12-13',NULL,NULL),(3,'Roman','Ritzal','1992-05-29',NULL,NULL);
+INSERT INTO `author` VALUES (1,'Philipp','Mueller','1991-12-13'),(3,'Roman','Ritzal','1992-05-29'),(4,'Harald','Jahralt','29.04.1980');
 /*!40000 ALTER TABLE `author` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-10-21 15:44:29
+-- Dump completed on 2014-12-13 12:23:04

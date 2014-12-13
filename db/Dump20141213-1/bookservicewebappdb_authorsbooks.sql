@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `bookservicewebappdb` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `bookservicewebappdb`;
--- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.6.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: bookservicewebappdb
 -- ------------------------------------------------------
@@ -33,7 +33,7 @@ CREATE TABLE `authorsbooks` (
   KEY `authorid_idx` (`authorid`),
   CONSTRAINT `authorid` FOREIGN KEY (`authorid`) REFERENCES `author` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `bookid` FOREIGN KEY (`bookid`) REFERENCES `book` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `authorsbooks` (
 
 LOCK TABLES `authorsbooks` WRITE;
 /*!40000 ALTER TABLE `authorsbooks` DISABLE KEYS */;
-INSERT INTO `authorsbooks` VALUES (1,1,1),(2,1,3);
+INSERT INTO `authorsbooks` VALUES (1,1,1),(2,1,3),(3,19,4);
 /*!40000 ALTER TABLE `authorsbooks` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-10-21 15:44:28
+-- Dump completed on 2014-12-13 12:23:03

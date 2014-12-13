@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `bookservicewebappdb` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `bookservicewebappdb`;
--- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.6.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: bookservicewebappdb
 -- ------------------------------------------------------
@@ -26,14 +26,11 @@ DROP TABLE IF EXISTS `publisher`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `publisher` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
-  `address` varchar(45) NOT NULL,
-  `postcode` varchar(45) NOT NULL,
-  `countrycode` varchar(45) NOT NULL,
-  `email` varchar(45) DEFAULT NULL,
-  `telephone` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`,`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `name` varchar(45) DEFAULT NULL,
+  `postcode` varchar(45) DEFAULT NULL,
+  `countrycode` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +39,7 @@ CREATE TABLE `publisher` (
 
 LOCK TABLES `publisher` WRITE;
 /*!40000 ALTER TABLE `publisher` DISABLE KEYS */;
-INSERT INTO `publisher` VALUES (1,'RoPub','hoechstaedtplatz 5','1220','AUT',NULL,NULL),(3,'PhiPub','In Feybergen 8','2120','AUT',NULL,NULL);
+INSERT INTO `publisher` VALUES (1,'RoPub','1220','AUT'),(3,'PhiPub','2120','AUT'),(4,'asd','asd','asd'),(5,'asd','asd','asd'),(6,'asd','asd','asd'),(7,'RomanAG','Wien','Aut'),(8,'Roman','Wien','aut'),(9,'Günther','w','aut'),(10,'Günther','w','aut'),(11,'Günther','w','aut'),(12,'Günther','w','aut'),(13,'Günther','w','aut');
 /*!40000 ALTER TABLE `publisher` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-10-21 15:44:27
+-- Dump completed on 2014-12-13 12:23:03
