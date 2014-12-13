@@ -45,11 +45,6 @@ public class Publisher {
 
     public Publisher(){super();}
 
-    public Publisher(int id){
-        super();
-        this.id = id;
-    }
-
     public int getId() {
         return id;
     }

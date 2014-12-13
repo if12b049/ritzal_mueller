@@ -8,9 +8,11 @@ import com.bookserviceapp.services.PublisherService;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 import java.util.List;
 
 /**
@@ -25,16 +27,6 @@ public class PublisherResource {
     @Inject
     PublisherService service;
 
-    /*** Create ***/
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void createPublisher(List<Publisher> listPub){
-        for(Publisher tmp : listPub) service.createPublisher(tmp);
-
-    }
-
-
-    /*** Read ***/
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Publisher> getAllPublishers() {
@@ -55,21 +47,9 @@ public class PublisherResource {
         return service.getPublisherById(id);
     }
 
-    /*** Update ***/
-    @PUT
-    @Consumes({"application/json"})
-    public void updatePublisher(List <Publisher> listPub){
-        for(Publisher tmp : listPub) service.updatePublisher(tmp);
-    }
 
-    /*** Delete ***/
-    @DELETE
-    @Consumes("text/plain")
-    public void deletePublisherPerId(String input){
-        //java.lang.IllegalArgumentException: com.bookserviceapp.businessobjects.Publisher cannot be cast to java.io.Serializable
-        int id = Integer.parseInt(input);
-        service.removePublisher(new Publisher(id));
-    }
-
+    //@PUT
+    //@DELETE
+    //@POST
 
 }

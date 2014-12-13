@@ -24,21 +24,21 @@ public class BookResource {
     BookService service;
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_XML)
     public List<Book> getAllBooks() {
         return service.getAllBooks();
     }
 
     @GET
     @Path("/title/{title}")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_XML)
     public List<Book> getBookByTitle(@PathParam("title") String title) {
         return service.getBookByTitle(title);
     }
 
     @GET
     @Path("/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_XML)
     public List<Book> getBookById(@PathParam("id") int id) {
         return service.getBookById(id);
     }

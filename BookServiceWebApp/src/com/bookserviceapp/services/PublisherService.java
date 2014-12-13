@@ -2,13 +2,11 @@ package com.bookserviceapp.services;
 
 import com.bookserviceapp.businessobjects.Author;
 import com.bookserviceapp.businessobjects.Publisher;
-import jdk.nashorn.internal.parser.JSONParser;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.TransactionRequiredException;
 import java.util.List;
 
 /**
@@ -22,6 +20,10 @@ public class PublisherService {
     @PersistenceContext
     private EntityManager em;
 
+    public void importPublisher(Publisher p) {
+        em.persist(p);
+    }
+
     public List<Publisher> getAllPublishers(){
         return em.createNamedQuery("Publisher.selectAll").getResultList();
     }
@@ -34,28 +36,5 @@ public class PublisherService {
         return em.createNamedQuery("Publisher.selectById").setParameter("id", id).getResultList();
     }
 
-
-    public void removePublisher(Publisher p){
-        Publisher publisher = em.find(Publisher.class, p); //Object!
-
-        if(publisher != null) {
-            em.getTransaction().begin();
-            em.remove(publisher);
-            em.getTransaction().commit();
-        }
-    }
-    public void createPublisher(Publisher publisher){
-        em.getTransaction().begin();
-        em.persist(publisher);
-        em.getTransaction().commit();
-    }
-
-    public void updatePublisher(Publisher p){
-       // Publisher publisher = em.find(Publisher.class,p.getId());
-
-        em.getTransaction().begin();
-        em.merge(p);
-        em.getTransaction().commit();
-    }
 
 }
