@@ -25,7 +25,8 @@ public class Author {
     /*inside database*/
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @XmlElement(name = "id")
+    //@XmlElement(name = "id")
+    @XmlTransient
     @Column(name = "id")
     private int id;
     @XmlAttribute(name = "firstname")

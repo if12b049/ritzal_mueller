@@ -18,7 +18,7 @@ public class BookSOAPWebServiceImpl implements BookSOAPWebService{
 
     @Override
     public void importBook(Book book) {
-            bookService.importBook(book);
+        bookService.importBook(book);
     }
 
     @Override
@@ -29,56 +29,6 @@ public class BookSOAPWebServiceImpl implements BookSOAPWebService{
     @Override
     public List<Book> getBookByTitle(String title) {
         return bookService.getBookByTitle(title);
-    }
-
-    @Override
-    public List<Author> getAllAuthors() {
-        return null;
-    }
-
-    @Override
-    public List<Author> getConcreteAuthor(String name) {
-        return null;
-    }
-
-    @Override
-    public void createAuthor(String author) {
-
-    }
-
-    @Override
-    public void updateAuthor(String name) {
-
-    }
-
-    @Override
-    public void deleteAuthor(String name) {
-
-    }
-
-    @Override
-    public List<Publisher> getAllPublisher() {
-        return null;
-    }
-
-    @Override
-    public List<Publisher> getConcretePublisher(String name) {
-        return null;
-    }
-
-    @Override
-    public void createPublisher(String author) {
-
-    }
-
-    @Override
-    public void updatePublisher(String name) {
-
-    }
-
-    @Override
-    public void deletePublisher(String name) {
-
     }
 
 }

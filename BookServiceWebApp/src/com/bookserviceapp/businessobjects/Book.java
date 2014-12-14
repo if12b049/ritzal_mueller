@@ -26,7 +26,8 @@ public class Book {
     /*inside database*/
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @XmlElement(name = "id")
+    //@XmlElement(name = "id")
+    @XmlTransient
     @Column(name = "id")
     private long id;
 
@@ -142,5 +143,9 @@ public class Book {
 
     public void setAuthorList(List<Author> authorList) {
         this.authorList = authorList;
+    }
+
+    public void deletePublisher(){
+        publisher = null;
     }
 }
