@@ -50,7 +50,7 @@ public class PublisherResource {
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Publisher> getPublisherById(@PathParam("id") int id) {
+    public Publisher getPublisherById(@PathParam("id") int id) {
         return service.getPublisherById(id);
     }
 

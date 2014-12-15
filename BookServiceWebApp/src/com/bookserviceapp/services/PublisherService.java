@@ -28,8 +28,8 @@ public class PublisherService {
         return em.createNamedQuery("Publisher.selectByName").setParameter("name", name).getResultList();
     }
 
-    public List<Publisher> getPublisherById(int id){
-        return em.createNamedQuery("Publisher.selectById").setParameter("id", id).getResultList();
+    public Publisher getPublisherById(int id){
+        return (Publisher) em.createNamedQuery("Publisher.selectById").setParameter("id", id).getSingleResult();
     }
 
     public void removePublisher(int id){
