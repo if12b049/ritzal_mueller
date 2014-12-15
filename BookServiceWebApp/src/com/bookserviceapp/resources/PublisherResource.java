@@ -65,11 +65,10 @@ public class PublisherResource {
     @DELETE
     @Consumes("text/plain")
     public void deletePublisherPerId(String input){
-        //java.lang.IllegalArgumentException: com.bookserviceapp.businessobjects.Publisher cannot be cast to java.io.Serializable
         int id = Integer.parseInt(input);
-        service.removePublisher(new Publisher(id));
+        service.removePublisher(id);
     }
-
+    /*
     @DELETE
     @Consumes({"application/json"})
     public void deletePublisherPerObject(Publisher publisher){
@@ -77,6 +76,6 @@ public class PublisherResource {
 
         service.removePublisher(publisher);
     }
-
+    */
 
 }

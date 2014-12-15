@@ -57,6 +57,12 @@ public class AuthorResource {
 
 
     //@PUT
-    //@DELETE
+    /*** Delete ***/
+    @DELETE
+    @Consumes("text/plain")
+    public void deletePublisherPerId(String input){
+        int id = Integer.parseInt(input);
+        service.removeAuthor(id);
+    }
     //@POST
 }

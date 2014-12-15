@@ -44,7 +44,7 @@ public class PublisherService {
     }
     public void removePublisher(int id){
 
-        Publisher publisher = em.find(Publisher.class, new Publisher(id)); //Object!
+        Publisher publisher = em.find(Publisher.class, id); //Object!
 
         if(publisher != null) {
             //       em.getTransaction().begin();

@@ -26,7 +26,16 @@ public class AuthorService {
         em.persist(author);
         //  em.getTransaction().commit();
     }
+    public void removeAuthor(int id){
 
+        Author author = em.find(Author.class, id); //Object!
+
+        if(author != null) {
+            //       em.getTransaction().begin();
+            em.remove(author);
+            //        em.getTransaction().commit();
+        }
+    }
     public List<Author> getAllAuthors(){
         return em.createNamedQuery("Author.selectAll").getResultList();
     }
