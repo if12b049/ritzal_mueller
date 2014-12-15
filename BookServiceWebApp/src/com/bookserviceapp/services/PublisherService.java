@@ -32,16 +32,6 @@ public class PublisherService {
         return em.createNamedQuery("Publisher.selectById").setParameter("id", id).getResultList();
     }
 
-
-    public void removePublisher(Publisher p){
-        Publisher publisher = em.find(Publisher.class, p); //Object!
-
-        if(publisher != null) {
-     //       em.getTransaction().begin();
-            em.remove(publisher);
-    //        em.getTransaction().commit();
-        }
-    }
     public void removePublisher(int id){
 
         Publisher publisher = em.find(Publisher.class, id); //Object!
@@ -58,14 +48,16 @@ public class PublisherService {
       //  em.getTransaction().commit();
     }
 
-    public void updatePublisher(Publisher p){
-        Publisher publisher = em.find(Publisher.class, p);
-        em.flush();
+    public void updatePublisher(Publisher p, int id){
+        Publisher publisher = em.find(Publisher.class, id);
+
     //    em.getTransaction().begin();
-        if(publisher != null) em.merge(publisher);
-        else em.persist(p);
-
-
+        if(publisher != null) {
+            publisher = p;
+            publisher.setId(id);
+            em.merge(publisher);
+        }
+       // else em.persist(p);
    //     em.getTransaction().commit();
     }
 

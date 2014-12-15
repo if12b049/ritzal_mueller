@@ -57,8 +57,9 @@ public class PublisherResource {
     /*** Update ***/
     @PUT
     @Consumes({"application/json"})
-    public void updatePublisher(List <Publisher> listPub){
-        for(Publisher tmp : listPub) service.updatePublisher(tmp);
+    @Path("/{id}")
+    public void updatePublisher(List <Publisher> listPub, @PathParam("id") int id){
+        for(Publisher tmp : listPub) service.updatePublisher(tmp, id);
     }
 
     /*** Delete ***/

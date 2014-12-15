@@ -48,5 +48,18 @@ public class AuthorService {
         return em.createNamedQuery("Author.selectById").setParameter("id", id).getResultList();
     }
 
+    public void updateAuthor(Author a, int id){
+        Author author = em.find(Author.class, id);
+
+        //    em.getTransaction().begin();
+        if(author != null) {
+            author = a;
+            author.setId(id);
+            em.merge(author);
+        }
+        // else em.persist(p);
+        //     em.getTransaction().commit();
+    }
+
 
 }

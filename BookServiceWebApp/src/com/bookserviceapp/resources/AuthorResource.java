@@ -56,7 +56,13 @@ public class AuthorResource {
     }
 
 
-    //@PUT
+    /*** Update ***/
+    @PUT
+    @Consumes({"application/json"})
+    @Path("/{id}")
+    public void updatePublisher(List <Author> listAuthor, @PathParam("id") int id){
+        for(Author tmp : listAuthor) service.updateAuthor(tmp, id);
+    }
     /*** Delete ***/
     @DELETE
     @Consumes("text/plain")
