@@ -26,7 +26,7 @@ public class Publisher {
     /*inside database*/
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //@XmlElement(name = "id")
+  //  @XmlElement(name = "id")
     @Column(name = "id")
     @XmlTransient
     private int id;
@@ -45,6 +45,11 @@ public class Publisher {
     private List<Book> bookList;
 
     public Publisher(){super();}
+
+    public Publisher(int id){
+        super();
+        this.id = id;
+    }
 
     public int getId() {
         return id;

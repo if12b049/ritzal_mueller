@@ -2,6 +2,7 @@ package com.bookserviceapp.services;
 
 import com.bookserviceapp.businessobjects.Author;
 import com.bookserviceapp.businessobjects.Book;
+import com.bookserviceapp.businessobjects.Publisher;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -20,8 +21,10 @@ public class AuthorService {
     @PersistenceContext
     private EntityManager em;
 
-    public void importAuthor(Author a) {
-        em.persist(a);
+    public void createAuthor(Author author){
+        //  em.getTransaction().begin();
+        em.persist(author);
+        //  em.getTransaction().commit();
     }
 
     public List<Author> getAllAuthors(){

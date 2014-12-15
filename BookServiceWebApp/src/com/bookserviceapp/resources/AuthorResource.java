@@ -2,6 +2,7 @@ package com.bookserviceapp.resources;
 
 import com.bookserviceapp.businessobjects.Author;
 import com.bookserviceapp.businessobjects.Book;
+import com.bookserviceapp.businessobjects.Publisher;
 import com.bookserviceapp.services.AuthorService;
 import com.bookserviceapp.services.BookService;
 
@@ -26,6 +27,14 @@ public class AuthorResource {
     @Inject
     AuthorService service;
 
+    /*** Create ***/
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void createPublisher(List<Author> listAuthor){
+        for(Author tmp : listAuthor) service.createAuthor(tmp);
+    }
+
+    /*** Read ***/
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Author> getAllAuthors() {
