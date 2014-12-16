@@ -28,7 +28,7 @@ public class Publisher {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
   //  @XmlElement(name = "id")
     @Column(name = "id")
-    @XmlTransient
+  //  @XmlTransient
     private int id;
     @XmlAttribute(name = "name")
     @Column(name = "name")

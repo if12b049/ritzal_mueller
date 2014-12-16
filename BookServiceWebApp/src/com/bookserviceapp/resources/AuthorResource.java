@@ -51,7 +51,7 @@ public class AuthorResource {
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Author> getAuthorById(@PathParam("id") int id) {
+    public Author getAuthorById(@PathParam("id") int id) {
         return service.getAuthorById(id);
     }
 

@@ -44,8 +44,8 @@ public class AuthorService {
         return em.createNamedQuery("Author.selectByName").setParameter("name", name).getResultList();
     }
 
-    public List<Author> getAuthorById(int id){
-        return em.createNamedQuery("Author.selectById").setParameter("id", id).getResultList();
+    public Author getAuthorById(int id){
+        return (Author)em.createNamedQuery("Author.selectById").setParameter("id", id).getSingleResult();
     }
 
     public void updateAuthor(Author a, int id){

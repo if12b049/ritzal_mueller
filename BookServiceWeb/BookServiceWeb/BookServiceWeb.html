@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="lib/jquery.js"></script>
+<script>
+
+
+$( document ).ready(function() {
+	sendRequest();
+});
+
+//Request - GET all Publisher
+function sendRequest() {
+	$.ajax({
+		url: "http://localhost:8080/BookServiceWebAppWeb/resources/publisher",
+		type: "GET",
+		
+		headers: {          
+	    	Accept: "application/json"
+		},
+		success: function(value) {
+			
+			var value_length = value.length;
+			//$("#outputDiv").append('<ul>');
+			var list = $('<ul>');
+			for (var i = 0; i < value_length; i++) {
+			  var id = value[i]["id"]
+			  list.append('<li><a href="#" onclick="getPublisherPerId(\'' + value[i]["id"] + '\');"><span>' + value[i]["name"] + '</span></a></li>');
+			}
+			list.append($('</ul>'));
+			$("#outputDiv").append(list);
+		}
+	});
+}
+function getPublisherPerId(id) {
+	$.ajax({
+		url: "http://localhost:8080/BookServiceWebAppWeb/resources/publisher/" + id,
+		type: "GET",
+		
+		headers: {          
+	    	Accept: "application/json"
+		},
+		success: function(value) {
+			alert("name: " + value.name + "\n"
+				+ "postcode: " + value.postcode + "\n"
+				+ "countrycode: " + value.countrycode);
+			 
+		}
+	});
+}
+
+</script>
+</head>
+<body>
+<div id="outputDiv"></div>
+</body>
+</html>
