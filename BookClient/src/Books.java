@@ -7,7 +7,7 @@ import java.util.List;
  * Created by Roman on 14.12.2014.
  */
 
-@XmlRootElement
+@XmlRootElement(name = "books")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Books {
     @XmlElement(name = "book")

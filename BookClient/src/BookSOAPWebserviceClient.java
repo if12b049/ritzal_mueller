@@ -17,7 +17,6 @@ public class BookSOAPWebserviceClient {
         BookSOAPWebServiceImplService service = new BookSOAPWebServiceImplService();
         BookSOAPWebService port = service.getBookSOAPWebServiceImplPort();
 
-
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String eingabe = null;
         Books books = null;

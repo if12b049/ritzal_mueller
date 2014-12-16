@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
 <books>
-	<book ISBN="1234" title="HerrDerRinge" subtitle="englisch" description="cooles buch" pages="234" language="deutsch">
+	<book ISBN="19555559" title="HerrDerRinge2" subtitle="englisch" description="cooles buch" pages="234" language="deutsch">
 		<publisher name="CooleBücherAG" postcode="1234" countrycode="12341" />
 		<authors>
 			<author firstname="JRR" lastname="Tolkien" birthdate="29.7.1879" />

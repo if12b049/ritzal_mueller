@@ -44,13 +44,14 @@ import javax.xml.bind.annotation.*;
  */
 @XmlRootElement(name = "book")
 @XmlAccessorType(XmlAccessType.FIELD)
-/*@XmlType(name = "book", propOrder = {
+@XmlType(name = "book", propOrder = {
     "publisher",
     "authors"
-})*/
+})
 public class Book {
 
-    @XmlElement(namespace = "http://application.bookserviceapp.com/", name = "publisher")
+    //@XmlElement(namespace = "http://application.bookserviceapp.com/")
+    @XmlElement(name = "publisher")
     protected Publisher publisher;
     @XmlElementWrapper(name = "authors")
     @XmlElement(name = "author")
@@ -309,7 +310,5 @@ public class Book {
             }
             return this.author;
         }
-
     }
-
 }

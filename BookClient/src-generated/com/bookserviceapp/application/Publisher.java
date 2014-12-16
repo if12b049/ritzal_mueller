@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.*;
  */
 @XmlRootElement(name = "Publisher")
 @XmlAccessorType(XmlAccessType.FIELD)
-//@XmlType(name = "publisher")
+@XmlType(name = "publisher")
 public class Publisher {
     @XmlAttribute(name = "name")
     protected String name;

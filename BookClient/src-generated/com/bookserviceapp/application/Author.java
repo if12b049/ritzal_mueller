@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.*;
  */
 @XmlRootElement(name = "Author")
 @XmlAccessorType(XmlAccessType.FIELD)
-//@XmlType(name = "author")
+@XmlType(name = "author")
 public class Author {
 
     @XmlAttribute(name = "firstname")
