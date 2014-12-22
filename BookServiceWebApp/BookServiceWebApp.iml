@@ -20,6 +20,9 @@
     </facet>
     <facet type="ejb" name="EJB">
       <configuration>
+        <descriptors>
+          <deploymentDescriptor name="ejb-jar.xml" url="file://$MODULE_DIR$/META-INF/ejb-jar.xml" />
+        </descriptors>
         <ejbRoots>
           <root url="file://$MODULE_DIR$/src" />
         </ejbRoots>
@@ -46,11 +49,13 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Mojarra-2.2.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="JBoss 8.1.0.Final" level="application_server_libraries" />
-    <orderEntry type="library" scope="PROVIDED" name="ejb-3.2" level="project" />
+    <orderEntry type="library" name="ejb-3.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Jersey-2.2" level="project" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" name="JPA 2.1-JPA 2.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="JBoss 8.1.0.Final - CDI: Contexts and Dependency Injection" level="application_server_libraries" />
+    <orderEntry type="library" name="Java EE 6-Java EE 6 (2)" level="project" />
+    <orderEntry type="library" name="jboss-annotations-ejb3-4.2.2.GA" level="project" />
   </component>
 </module>
 

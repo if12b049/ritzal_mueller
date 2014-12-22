@@ -15,6 +15,8 @@
         <element id="library" level="project" name="JPA 1.0-JPA 1.0" />
         <element id="library" level="application_server_libraries" name="JBoss 8.1.0.Final - CDI: Contexts and Dependency Injection" />
         <element id="library" level="project" name="JPA 2.1-JPA 2.1" />
+        <element id="library" level="project" name="Java EE 6-Java EE 6 (2)" />
+        <element id="file-copy" path="$PROJECT_DIR$/lib/jboss-annotations-ejb3-4.2.2.GA.jar" />
       </element>
       <element id="jpa-descriptors" facet="BookServiceWebApp/jpa/JPA" />
     </root>

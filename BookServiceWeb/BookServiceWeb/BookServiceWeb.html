@@ -10,10 +10,14 @@ $( document ).ready(function() {
 });
 
 //Request - GET all Publisher
+var Username = "philipp"
+var Password = "write"
 function sendRequest() {
 	$.ajax({
 		url: "http://localhost:8080/BookServiceWebAppWeb/resources/publisher",
 		type: "GET",
+		username: Username,
+		password: Password,
 		
 		headers: {          
 	    	Accept: "application/json"
@@ -36,6 +40,8 @@ function getPublisherPerId(id) {
 	$.ajax({
 		url: "http://localhost:8080/BookServiceWebAppWeb/resources/publisher/" + id,
 		type: "GET",
+		username: Username,
+		password: Password,
 		
 		headers: {          
 	    	Accept: "application/json"
